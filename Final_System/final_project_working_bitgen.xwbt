@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\Matt\Documents\college\Junior\Spring 2013\Digital System Design\XilinxProjects\Final_System\final_project_working.ncd
+OUTFILE=C:\Users\Matt\Documents\college\Junior\Spring 2013\Digital System Design\XilinxProjects\Final_System\final_project_working.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4fg320
+WORKINGDIR=C:\Users\Matt\Documents\college\Junior\Spring 2013\Digital System Design\XilinxProjects\Final_System
+LICENSE=WebPack
+USER_INFO=208317139_0_0_479

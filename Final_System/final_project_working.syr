@@ -1,0 +1,707 @@
+Release 14.4 - xst P.49d (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Reading design: final_project_working.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "final_project_working.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "final_project_working"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : final_project_working
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "final_project_working.v" in library work
+Module <final_project_working> compiled
+No errors in compilation
+Analysis of file <"final_project_working.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <final_project_working> in library <work> with parameters.
+	sa_c = "0000"
+	sa_o = "0000"
+	sb_c = "0111"
+	sb_o = "0111"
+	sc_c = "1110"
+	sc_o = "1100"
+	sd_c = "1111"
+	sd_o = "1010"
+	se_c = "0110"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <final_project_working>.
+	sa_c = 4'b0000
+	sa_o = 4'b0000
+	sb_c = 4'b0111
+	sb_o = 4'b0111
+	sc_c = 4'b1110
+	sc_o = 4'b1100
+	sd_c = 4'b1111
+	sd_o = 4'b1010
+	se_c = 4'b0110
+WARNING:Xst:916 - "final_project_working.v" line 61: Delay is ignored for synthesis.
+WARNING:Xst:916 - "final_project_working.v" line 62: Delay is ignored for synthesis.
+WARNING:Xst:905 - "final_project_working.v" line 116: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <lock>, <open>, <close>, <pb_state>
+Module <final_project_working> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+INFO:Xst:2679 - Register <an<2>> in unit <final_project_working> has a constant value of 1 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <an<3>> in unit <final_project_working> has a constant value of 1 during circuit operation. The register is replaced by logic.
+
+Synthesizing Unit <final_project_working>.
+    Related source file is "final_project_working.v".
+WARNING:Xst:737 - Found 7-bit latch for signal <n_state>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Using one-hot encoding for signal <p_state>.
+WARNING:Xst:737 - Found 1-bit latch for signal <open>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 4-bit latch for signal <leds>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Found 2-bit register for signal <an<1:0>>.
+    Found 2-bit register for signal <clk>.
+    Found 1-bit register for signal <close>.
+    Found 1-bit register for signal <led>.
+    Found 4-bit register for signal <lsbs>.
+    Found 4-bit register for signal <msbs>.
+    Found 7-bit register for signal <sevseg>.
+    Found 33-bit comparator less for signal <clk_0$cmp_lt0000> created at line 301.
+    Found 32-bit up counter for signal <count_50M>.
+    Found 33-bit comparator less for signal <count_50M$cmp_lt0000> created at line 293.
+    Found 32-bit up counter for signal <count_a>.
+    Found 4-bit register for signal <i>.
+    Found 4-bit subtractor for signal <i$addsub0000> created at line 103.
+    Found 4-bit register for signal <j>.
+    Found 32-bit register for signal <lock>.
+    Found 4-bit subtractor for signal <old_j_1$sub0000> created at line 94.
+    Found 7-bit register for signal <p_state>.
+    Found 1-bit register for signal <pb_press>.
+    Found 2-bit register for signal <pb_state>.
+    Found 3-bit register for signal <x_reg>.
+    Summary:
+	inferred   2 Counter(s).
+	inferred  74 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+Unit <final_project_working> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 4-bit subtractor                                      : 2
+# Counters                                             : 2
+ 32-bit up counter                                     : 2
+# Registers                                            : 16
+ 1-bit register                                        : 7
+ 2-bit register                                        : 1
+ 3-bit register                                        : 1
+ 32-bit register                                       : 1
+ 4-bit register                                        : 4
+ 7-bit register                                        : 2
+# Latches                                              : 3
+ 1-bit latch                                           : 1
+ 4-bit latch                                           : 1
+ 7-bit latch                                           : 1
+# Comparators                                          : 2
+ 33-bit comparator less                                : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1426 - The value init of the FF/Latch lock_0 hinder the constant cleaning in the block final_project_working.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1293 - FF/Latch <lock_31> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_30> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_29> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_28> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_27> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_26> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_25> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_24> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_23> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_22> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_21> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_20> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_19> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_18> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_17> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_16> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_15> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_14> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_13> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_12> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_11> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_10> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_9> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_8> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_7> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_6> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_5> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_4> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_3> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_2> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_1> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 4-bit subtractor                                      : 2
+# Counters                                             : 2
+ 32-bit up counter                                     : 2
+# Registers                                            : 74
+ Flip-Flops                                            : 74
+# Latches                                              : 3
+ 1-bit latch                                           : 1
+ 4-bit latch                                           : 1
+ 7-bit latch                                           : 1
+# Comparators                                          : 2
+ 33-bit comparator less                                : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1426 - The value init of the FF/Latch lock_0 hinder the constant cleaning in the block final_project_working.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1293 - FF/Latch <lock_31> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_30> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_29> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_28> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_27> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_26> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_25> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_24> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_23> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_22> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_21> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_20> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_19> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_18> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_17> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_16> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_15> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_14> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_13> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_12> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_11> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_10> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_9> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_8> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_7> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_6> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_5> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_4> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_3> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_2> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <lock_1> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <final_project_working> ...
+WARNING:Xst:1293 - FF/Latch <i_3> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <msbs_3> (without init value) has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <i_3> has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <msbs_3> (without init value) has a constant value of 0 in block <final_project_working>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block final_project_working, actual ratio is 2.
+FlipFlop close has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop lsbs_3 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop lsbs_2 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop lsbs_1 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop lsbs_0 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop msbs_3 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop msbs_2 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop msbs_1 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop msbs_0 has been replicated 1 time(s) to handle iob=true attribute.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 116
+ Flip-Flops                                            : 116
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : final_project_working.ngr
+Top Level Output File Name         : final_project_working
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 33
+
+Cell Usage :
+# BELS                             : 380
+#      GND                         : 1
+#      INV                         : 14
+#      LUT1                        : 68
+#      LUT2                        : 7
+#      LUT2_D                      : 1
+#      LUT3                        : 21
+#      LUT3_D                      : 1
+#      LUT3_L                      : 2
+#      LUT4                        : 89
+#      LUT4_D                      : 2
+#      LUT4_L                      : 5
+#      MUXCY                       : 88
+#      MUXF5                       : 16
+#      VCC                         : 1
+#      XORCY                       : 64
+# FlipFlops/Latches                : 128
+#      FD                          : 28
+#      FDE                         : 20
+#      FDR                         : 68
+#      LD                          : 5
+#      LDCPE                       : 7
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 32
+#      IBUF                        : 4
+#      OBUF                        : 28
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                      113  out of   4656     2%  
+ Number of Slice Flip Flops:            114  out of   9312     1%  
+ Number of 4 input LUTs:                210  out of   9312     2%  
+ Number of IOs:                          33
+ Number of bonded IOBs:                  33  out of    232    14%  
+    IOB Flip Flops:                      14
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-------------------------------------+------------------------+-------+
+Clock Signal                         | Clock buffer(FF name)  | Load  |
+-------------------------------------+------------------------+-------+
+clock                                | BUFGP                  | 79    |
+clk_0                                | NONE(pb_press)         | 26    |
+clk_1                                | NONE(lock_0)           | 9     |
+pb_press                             | NONE(pb_state_0)       | 2     |
+open_not0001(open_not000148:O)       | NONE(*)(open)          | 5     |
+n_state_and0001(pb_state_or0000111:O)| NONE(*)(n_state_0)     | 7     |
+-------------------------------------+------------------------+-------+
+(*) These 2 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+--------------------------------------------+------------------------+-------+
+Control Signal                              | Buffer(FF name)        | Load  |
+--------------------------------------------+------------------------+-------+
+N0(XST_GND:G)                               | NONE(n_state_3)        | 2     |
+n_state_3__or0000(n_state_3__or00001:O)     | NONE(n_state_3)        | 2     |
+n_state_0__and0000(n_state_0__and00001_f5:O)| NONE(n_state_0)        | 1     |
+n_state_0__or0000(n_state_0__or00001:O)     | NONE(n_state_0)        | 1     |
+n_state_1__and0000(n_state_mux0000<5>:O)    | NONE(n_state_1)        | 1     |
+n_state_1__or0000(n_state_1__or00001:O)     | NONE(n_state_1)        | 1     |
+n_state_2__and0000(n_state_2__and00001:O)   | NONE(n_state_2)        | 1     |
+n_state_2__or0000(n_state_2__or00001:O)     | NONE(n_state_2)        | 1     |
+n_state_5__and0000(n_state_mux0000<1>:O)    | NONE(n_state_5)        | 1     |
+n_state_5__or0000(n_state_5__or00001:O)     | NONE(n_state_5)        | 1     |
+n_state_6__and0000(n_state_mux0000<0>1:O)   | NONE(n_state_6)        | 1     |
+n_state_6__or0000(n_state_6__or00001:O)     | NONE(n_state_6)        | 1     |
+--------------------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 5.679ns (Maximum Frequency: 176.087MHz)
+   Minimum input arrival time before clock: 1.946ns
+   Maximum output required time after clock: 5.210ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clock'
+  Clock period: 5.535ns (frequency: 180.684MHz)
+  Total number of paths / destination ports: 2939 / 132
+-------------------------------------------------------------------------
+Delay:               5.535ns (Levels of Logic = 14)
+  Source:            count_50M_6 (FF)
+  Destination:       count_50M_0 (FF)
+  Source Clock:      clock rising
+  Destination Clock: clock rising
+
+  Data Path: count_50M_6 to count_50M_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.591   0.622  count_50M_6 (count_50M_6)
+     LUT1:I0->O            1   0.704   0.000  Mcompar_count_50M_cmp_lt0000_cy<0>_rt (Mcompar_count_50M_cmp_lt0000_cy<0>_rt)
+     MUXCY:S->O            1   0.464   0.000  Mcompar_count_50M_cmp_lt0000_cy<0> (Mcompar_count_50M_cmp_lt0000_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_count_50M_cmp_lt0000_cy<1> (Mcompar_count_50M_cmp_lt0000_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_count_50M_cmp_lt0000_cy<2> (Mcompar_count_50M_cmp_lt0000_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_count_50M_cmp_lt0000_cy<3> (Mcompar_count_50M_cmp_lt0000_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_count_50M_cmp_lt0000_cy<4> (Mcompar_count_50M_cmp_lt0000_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_count_50M_cmp_lt0000_cy<5> (Mcompar_count_50M_cmp_lt0000_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_count_50M_cmp_lt0000_cy<6> (Mcompar_count_50M_cmp_lt0000_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_count_50M_cmp_lt0000_cy<7> (Mcompar_count_50M_cmp_lt0000_cy<7>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_count_50M_cmp_lt0000_cy<8> (Mcompar_count_50M_cmp_lt0000_cy<8>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_count_50M_cmp_lt0000_cy<9> (Mcompar_count_50M_cmp_lt0000_cy<9>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_count_50M_cmp_lt0000_cy<10> (Mcompar_count_50M_cmp_lt0000_cy<10>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_count_50M_cmp_lt0000_cy<11> (Mcompar_count_50M_cmp_lt0000_cy<11>)
+     MUXCY:CI->O          33   0.331   1.263  Mcompar_count_50M_cmp_lt0000_cy<12> (Mcompar_count_50M_cmp_lt0000_cy<12>)
+     FDR:R                     0.911          count_50M_0
+    ----------------------------------------
+    Total                      5.535ns (3.650ns logic, 1.885ns route)
+                                       (65.9% logic, 34.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_1'
+  Clock period: 5.679ns (frequency: 176.087MHz)
+  Total number of paths / destination ports: 100 / 13
+-------------------------------------------------------------------------
+Delay:               5.679ns (Levels of Logic = 3)
+  Source:            j_1 (FF)
+  Destination:       i_0 (FF)
+  Source Clock:      clk_1 rising
+  Destination Clock: clk_1 rising
+
+  Data Path: j_1 to i_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              6   0.591   0.844  j_1 (j_1)
+     LUT3_D:I0->O          3   0.704   0.566  Msub_old_j_1_sub0000_cy<2>11 (Msub_old_j_1_sub0000_cy<2>)
+     LUT4:I2->O            1   0.704   0.424  i_not0002_SW0 (N109)
+     LUT4:I3->O            4   0.704   0.587  i_not0002 (i_not0002)
+     FDE:CE                    0.555          i_0
+    ----------------------------------------
+    Total                      5.679ns (3.258ns logic, 2.421ns route)
+                                       (57.4% logic, 42.6% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_0'
+  Clock period: 3.519ns (frequency: 284.172MHz)
+  Total number of paths / destination ports: 79 / 16
+-------------------------------------------------------------------------
+Delay:               3.519ns (Levels of Logic = 1)
+  Source:            an_0 (FF)
+  Destination:       sevseg_0 (FF)
+  Source Clock:      clk_0 rising
+  Destination Clock: clk_0 rising
+
+  Data Path: an_0 to sevseg_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q             10   0.591   0.961  an_0 (an_0)
+     LUT2:I1->O            7   0.704   0.708  sevseg_not00011 (sevseg_not0001)
+     FDE:CE                    0.555          sevseg_0
+    ----------------------------------------
+    Total                      3.519ns (1.850ns logic, 1.669ns route)
+                                       (52.6% logic, 47.4% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'pb_press'
+  Clock period: 2.656ns (frequency: 376.506MHz)
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Delay:               2.656ns (Levels of Logic = 1)
+  Source:            pb_state_0 (FF)
+  Destination:       pb_state_0 (FF)
+  Source Clock:      pb_press rising
+  Destination Clock: pb_press rising
+
+  Data Path: pb_state_0 to pb_state_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              5   0.591   0.633  pb_state_0 (pb_state_0)
+     INV:I->O              1   0.704   0.420  pb_state_not0001<0>1_INV_0 (pb_state_not0001<0>)
+     FDE:D                     0.308          pb_state_0
+    ----------------------------------------
+    Total                      2.656ns (1.603ns logic, 1.053ns route)
+                                       (60.4% logic, 39.6% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'open_not0001'
+  Clock period: 5.302ns (frequency: 188.612MHz)
+  Total number of paths / destination ports: 13 / 5
+-------------------------------------------------------------------------
+Delay:               5.302ns (Levels of Logic = 3)
+  Source:            open (LATCH)
+  Destination:       open (LATCH)
+  Source Clock:      open_not0001 falling
+  Destination Clock: open_not0001 falling
+
+  Data Path: open to open
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q              31   0.676   1.341  open (open_OBUF)
+     LUT2_D:I1->O          8   0.704   0.761  open_not000111 (n_state_and0000)
+     LUT4_L:I3->LO         1   0.704   0.104  open_mux000023 (open_mux000023)
+     LUT4:I3->O            1   0.704   0.000  open_mux000047 (open_mux0000)
+     LD:D                      0.308          open
+    ----------------------------------------
+    Total                      5.302ns (3.096ns logic, 2.206ns route)
+                                       (58.4% logic, 41.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clock'
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Offset:              1.946ns (Levels of Logic = 1)
+  Source:            x<0> (PAD)
+  Destination:       x_reg_0 (FF)
+  Destination Clock: clock rising
+
+  Data Path: x<0> to x_reg_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.218   0.420  x_0_IBUF (x_0_IBUF)
+     FD:D                      0.308          x_reg_0
+    ----------------------------------------
+    Total                      1.946ns (1.526ns logic, 0.420ns route)
+                                       (78.4% logic, 21.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_0'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.946ns (Levels of Logic = 1)
+  Source:            pb (PAD)
+  Destination:       pb_press (FF)
+  Destination Clock: clk_0 rising
+
+  Data Path: pb to pb_press
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.218   0.420  pb_IBUF (pb_IBUF)
+     FD:D                      0.308          pb_press
+    ----------------------------------------
+    Total                      1.946ns (1.526ns logic, 0.420ns route)
+                                       (78.4% logic, 21.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'open_not0001'
+  Total number of paths / destination ports: 5 / 5
+-------------------------------------------------------------------------
+Offset:              5.210ns (Levels of Logic = 1)
+  Source:            open (LATCH)
+  Destination:       open (PAD)
+  Source Clock:      open_not0001 falling
+
+  Data Path: open to open
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q              31   0.676   1.262  open (open_OBUF)
+     OBUF:I->O                 3.272          open_OBUF (open)
+    ----------------------------------------
+    Total                      5.210ns (3.948ns logic, 1.262ns route)
+                                       (75.8% logic, 24.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clock'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              5.124ns (Levels of Logic = 1)
+  Source:            clk_0 (FF)
+  Destination:       clk<0> (PAD)
+  Source Clock:      clock rising
+
+  Data Path: clk_0 to clk<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             28   0.591   1.261  clk_0 (clk_0)
+     OBUF:I->O                 3.272          clk_0_OBUF (clk<0>)
+    ----------------------------------------
+    Total                      5.124ns (3.863ns logic, 1.261ns route)
+                                       (75.4% logic, 24.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_0'
+  Total number of paths / destination ports: 17 / 17
+-------------------------------------------------------------------------
+Offset:              4.745ns (Levels of Logic = 1)
+  Source:            an_0 (FF)
+  Destination:       an<0> (PAD)
+  Source Clock:      clk_0 rising
+
+  Data Path: an_0 to an<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q             10   0.591   0.882  an_0 (an_0)
+     OBUF:I->O                 3.272          an_0_OBUF (an<0>)
+    ----------------------------------------
+    Total                      4.745ns (3.863ns logic, 0.882ns route)
+                                       (81.4% logic, 18.6% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.65 secs
+ 
+--> 
+
+Total memory usage is 260768 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   74 (   0 filtered)
+Number of infos    :    5 (   0 filtered)
+

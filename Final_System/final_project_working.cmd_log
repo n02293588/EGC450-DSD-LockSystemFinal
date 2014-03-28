@@ -1,0 +1,30 @@
+xst -intstyle ise -ifn "C:/Users/Matt/Documents/college/Junior/Spring 2013/Digital System Design/XilinxProjects/Final_System/final_project_working.xst" -ofn "C:/Users/Matt/Documents/college/Junior/Spring 2013/Digital System Design/XilinxProjects/Final_System/final_project_working.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 "final_project_working.ngc" final_project_working.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o final_project_working_map.ncd final_project_working.ngd final_project_working.pcf 
+par -w -intstyle ise -ol high -t 1 final_project_working_map.ncd final_project_working.ncd final_project_working.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml final_project_working.twx final_project_working.ncd -o final_project_working.twr final_project_working.pcf 
+bitgen -intstyle ise -f final_project_working.ut final_project_working.ncd 
+xst -intstyle ise -ifn "C:/Users/Matt/Documents/college/Junior/Spring 2013/Digital System Design/XilinxProjects/Final_System/final_project_working.xst" -ofn "C:/Users/Matt/Documents/college/Junior/Spring 2013/Digital System Design/XilinxProjects/Final_System/final_project_working.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc final_constraints.ucf -p xc3s500e-fg320-4 "final_project_working.ngc" final_project_working.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o final_project_working_map.ncd final_project_working.ngd final_project_working.pcf 
+par -w -intstyle ise -ol high -t 1 final_project_working_map.ncd final_project_working.ncd final_project_working.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml final_project_working.twx final_project_working.ncd -o final_project_working.twr final_project_working.pcf -ucf final_constraints.ucf 
+bitgen -intstyle ise -f final_project_working.ut final_project_working.ncd 
+xst -intstyle ise -ifn "C:/Users/Matt/Documents/college/Junior/Spring 2013/Digital System Design/XilinxProjects/Final_System/final_project_working.xst" -ofn "C:/Users/Matt/Documents/college/Junior/Spring 2013/Digital System Design/XilinxProjects/Final_System/final_project_working.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc final_constraints.ucf -p xc3s500e-fg320-4 "final_project_working.ngc" final_project_working.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o final_project_working_map.ncd final_project_working.ngd final_project_working.pcf 
+par -w -intstyle ise -ol high -t 1 final_project_working_map.ncd final_project_working.ncd final_project_working.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml final_project_working.twx final_project_working.ncd -o final_project_working.twr final_project_working.pcf -ucf final_constraints.ucf 
+bitgen -intstyle ise -f final_project_working.ut final_project_working.ncd 
+xst -intstyle ise -ifn "C:/Users/Matt/Documents/college/Junior/Spring 2013/Digital System Design/XilinxProjects/Final_System/final_project_working.xst" -ofn "C:/Users/Matt/Documents/college/Junior/Spring 2013/Digital System Design/XilinxProjects/Final_System/final_project_working.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc final_constraints.ucf -p xc3s500e-fg320-4 "final_project_working.ngc" final_project_working.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o final_project_working_map.ncd final_project_working.ngd final_project_working.pcf 
+par -w -intstyle ise -ol high -t 1 final_project_working_map.ncd final_project_working.ncd final_project_working.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml final_project_working.twx final_project_working.ncd -o final_project_working.twr final_project_working.pcf -ucf final_constraints.ucf 
+bitgen -intstyle ise -f final_project_working.ut final_project_working.ncd 
+xst -intstyle ise -ifn "C:/Users/Matt/Documents/college/Junior/Spring 2013/Digital System Design/XilinxProjects/Final_System/final_project_working.xst" -ofn "C:/Users/Matt/Documents/college/Junior/Spring 2013/Digital System Design/XilinxProjects/Final_System/final_project_working.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc final_constraints.ucf -p xc3s500e-fg320-4 "final_project_working.ngc" final_project_working.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o final_project_working_map.ncd final_project_working.ngd final_project_working.pcf 
+par -w -intstyle ise -ol high -t 1 final_project_working_map.ncd final_project_working.ncd final_project_working.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml final_project_working.twx final_project_working.ncd -o final_project_working.twr final_project_working.pcf -ucf final_constraints.ucf 
+bitgen -intstyle ise -f final_project_working.ut final_project_working.ncd 
